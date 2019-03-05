@@ -70,6 +70,12 @@ def createTextObj(text,font="impact.ttf",taille=30,couleur=(255,255,255)):
 	
 # création des acteurs
 def create_actors():
+	pygame.init()
+	
+	pygame.display.set_caption("Typping Race")
+	global screen
+	screen = pygame.display.set_mode((width,height))
+	
 	white = (255,255,255)
 	global TabObject
 	TabObject = []
@@ -266,10 +272,6 @@ def action_render(ecran):
 def main():
 	# connexion = conn
 	running = True
-	pygame.init()
-	
-	pygame.display.set_caption("Typping Race")
-	screen = pygame.display.set_mode((width,height))
 	clock = pygame.time.Clock()
 	
 	create_actors()
@@ -277,7 +279,7 @@ def main():
 	if not IN_NETWORK :
 		thread = Thread(target=fournir_les_mots)
 		thread.start()
-	inc=0
+	
 	while running==True:
 		delta_ms = clock.tick(fps)
 		delta_s = delta_ms/1000.0
@@ -290,8 +292,7 @@ def main():
 			action_update(delta_s)
 			action_render(screen)
 		
-		# print("déplacement:", int(SPEED*delta_s),"delta_s:", delta_s,"delta_ms:", delta_ms )
-		inc=inc+1
+		
 	
 	pygame.quit()
 	exit()
