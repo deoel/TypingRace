@@ -3,7 +3,7 @@ import pygame_textinput
 import pygame, time
 from threading import Thread
 
-IN_NETWORK = True
+IN_NETWORK = False
 connexion = None
 width = 600
 height = 480

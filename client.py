@@ -14,7 +14,7 @@ class ThreadReception(threading.Thread):
 			sys.exit()
 		print("Connexion établie avec le serveur.")
 
-		# self.start = False
+		#self.start = False
 		
 	def run(self):
 		self.dialogue_avec_serveur()
