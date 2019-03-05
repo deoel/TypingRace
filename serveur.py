@@ -1,4 +1,4 @@
-import socket, sys, threading, random, dictionnaire, time
+import socket, sys, threading, random, time
 
 phrase = """ administrateurs système ont souvent besoin de concevoir des petits programmes
 pour automatiser certaines tâches. Ils utilisent généralement l’interpréteur de commandes, qui offre une syntaxe basique pourconcevoir des séquences d’opérations. 
@@ -13,6 +13,8 @@ Bien que ce genre de besoin soit plus fréquent sur  systèmes Unices ( système
 de la famille Unix), il n’est plus rare de rencontrer des administrateurs Windows qui
 aient adopté Python pour la conception de leurs scripts système."""
 phrase = "chadax chadrac kap g-eye orphee mahanga orcha munongo chador nsadi chadax chadrac kap g-eye orphee mahanga orcha munongo chador nsadi"
+	
+phrase = "Server side open a socket on a port listen for a message from a client and send an echo reply echoes lines until eof when client closes socket spawns a thread to handle each client connection threads share global memory space with main thread this is more portable than fork threads work on standard Windows systems but process forks do not"
 	
 DICTIONNAIRE_JEU = phrase.split(" ")
 
