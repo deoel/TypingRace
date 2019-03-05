@@ -298,6 +298,6 @@ def main():
 	return 0
 	
 if __name__ == '__main__':
-	print("salut orphee")
+	print("Bonjour très cher joueur!")
 	main()
 	
