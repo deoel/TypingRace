@@ -12,6 +12,36 @@ class GuiTypingRace:
     
     def loop(self):
         pass
+    
+    def main(self):
+        self.running = True
+        clock = pygame.time.Clock()
+        
+        #CREATE THE GAME USER INTERFACE 
+        self.create_ui() 
+
+        # création continue des mots
+        if not IN_NETWORK :
+            thread = Thread(target=fournir_les_mots)
+            thread.start()
+        
+        while self.running==True:
+            delta_ms = clock.tick(FPS)
+            delta_s = delta_ms/1000.0
+            events = pygame.event.get()
+            for evt in events:
+                self.running = action_event(evt,delta_s)
+                
+            textinput.update(events)
+            if not suivi_jeux["over"]:
+                action_update(delta_s)
+                action_render(screen)
+            
+            
+        
+        pygame.quit()
+        exit()
+        return 0
 
     def create_ui(self):
         pygame.init()
