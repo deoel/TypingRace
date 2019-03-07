@@ -43,7 +43,7 @@ class GuiTypingRace:
             print("nouveau")
             
     ######################################
-    def createTextObj(self,text,font="impact.ttf",taille=30,couleur=(255,255,255)):
+    def createTextObj(self,text,font="fonts/CurvedSquare.ttf",taille=30,couleur=(255,255,255)):
         police = pygame.font.Font(font,taille)
         textSurf = police.render(text,True,couleur)
         rect = textSurf.get_rect()
@@ -82,7 +82,7 @@ class GuiTypingRace:
         rectScores.top = HEIGHT-HAUT_BORD_RECT
         rectScores.left = WIDTH/2
         
-        self.policeScore = pygame.font.Font("impact.ttf",16)
+        self.policeScore = pygame.font.Font("fonts/impact.ttf",16)
         self.nouveauScore("car",0)
         self.nouveauScore("mot",0)
         self.nouveauScore("gen",0)
@@ -94,7 +94,7 @@ class GuiTypingRace:
         self.son_over.set_volume(0.1)
         
         global mfont
-        mfont = pygame.font.Font("impact.ttf",70)
+        mfont = pygame.font.Font("fonts/impact.ttf",70)
 
         
     ################################################
