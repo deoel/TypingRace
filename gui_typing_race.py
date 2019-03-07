@@ -3,6 +3,8 @@ import pygame_textinput
 import pygame, time
 from threading import Thread
 from config import *
+from word import Word
+import os
 
 
 class GuiTypingRace:
@@ -14,8 +16,11 @@ class GuiTypingRace:
         self.main()
 
     def fournir_les_mots(self):
-        text = "chadax chadrac kap g-eye orphee mahanga orcha munongo chador nsadi chadax chadrac kap g-eye orphee mahanga orcha munongo chador nsadi"
-        tabText = text.split(" ")
+        word_processing = Word()
+        file_name = "dic_words.txt"
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        path_file = os.path.join(dir_path, file_name)
+        tabText = word_processing.get_all_words(path_file)
         
         j = -1
         while True and j!=len(tabText)-1:
