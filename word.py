@@ -4,7 +4,7 @@ class Word:
         pass
 
     def get_content_file(self, file):
-        content = "23037"
+        content = ""
         with open(file, "r") as f:
             c = f.readlines()
         if c != "":

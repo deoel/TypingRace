@@ -146,7 +146,7 @@ class GuiTypingRace:
     ######################################
     def mot_existe(self,mot):
         for i,e in enumerate(self.TabObject):
-            if e["txt"] == mot:
+            if e["txt"] == mot and e["visible"] :
                 return i
         return -1
 
@@ -175,7 +175,7 @@ class GuiTypingRace:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                word = self.textinput.get_text()
+                word = self.textinput.get_text().lower()
                 index = self.mot_existe(word)
                 if index >= 0:
                     self.delete_word(index)
