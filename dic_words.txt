@@ -1,0 +1,24 @@
+Programming is the process of taking an 
+algorithm and encoding it into a notation a 
+programming language so that it can be executed 
+by a computer Although many programming languages 
+and many different types of computers exist the 
+important first step is the need to have the solution 
+Without an algorithm there can be no program
+
+Computer science is not the study of programming 
+Programming however is an important part of what a 
+computer scientist does Programming is often the way that we create a representation for our solutions Therefore this language representation and the process of creating it becomes a fundamental part of the discipline
+
+Algorithms describe the solution to a problem in 
+terms of the data needed to represent the problem 
+instance and the set of steps necessary to produce 
+the intended result Programming languages must provide a 
+notational way to represent both the process and the data 
+To this end languages provide control constructs and data types
+
+Control constructs allow algorithmic steps to be represented in a 
+convenient yet unambiguous way At a minimum algorithms require 
+constructs that perform sequential processing selection for 
+decision-making and iteration for repetitive control As long as the 
+language provides these basic statements it can be used for algorithm representation
