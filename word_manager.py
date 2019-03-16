@@ -1,5 +1,5 @@
 
-class Word:
+class WordManager:
     def __init__(self):
         pass
 
