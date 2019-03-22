@@ -102,7 +102,7 @@ class Gui(Thread):
 		while running==True:
 			events = pygame.event.get()
 			for evt in events:
-				running = self.traite_player_action(evt)
+				running = self.get_player_action(evt)
 					
 			self.textinput.update(events)
 			if not self.over:
@@ -170,7 +170,7 @@ class Gui(Thread):
 		self.tabLabelWord[index]["rect"].left = left
 	
 	#####################################
-	def traite_player_action(self,event):
+	def get_player_action(self,event):
 		if event.type == pygame.QUIT:
 			return False
 
