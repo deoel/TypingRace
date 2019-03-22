@@ -3,6 +3,7 @@ import pygame_textinput
 import pygame, time
 from config import *
 from threading import Thread
+from path import Path
 
 class Gui(Thread):
 
@@ -15,6 +16,7 @@ class Gui(Thread):
 		self.height = height
 		self.bordBottomHeight = bordBottomHeight
 		self.height_jeux = height - bordBottomHeight
+		self.path = Path()
 	
 	def run(self):
 		self.drawScreen()
@@ -28,8 +30,8 @@ class Gui(Thread):
 		
 		pygame.display.set_caption("Typping Race")
 		self.screen = pygame.display.set_mode((self.width,self.height))
-		self.policeScore = pygame.font.Font("fonts/impact.ttf",16)
-		self.mfont = pygame.font.Font("fonts/impact.ttf",70)
+		self.policeScore = pygame.font.Font(self.path.get_path(__file__, 1, "fonts\impact.ttf"),16)
+		self.mfont = pygame.font.Font(self.path.get_path(__file__, 1, "fonts\impact.ttf"),70)
 				
 		
 	def drawBordBottom(self):
@@ -123,7 +125,7 @@ class Gui(Thread):
 			lastLabel = self.tabLabelWord[index]
 			num = lastLabel["num"] + 1
 			
-		font="fonts/CurvedSquare.ttf"
+		font= self.path.get_path(__file__, 1, "fonts\CurvedSquare.ttf")
 		taille=30
 		couleur=(255,255,255)
 		police = pygame.font.Font(font,taille)
@@ -162,7 +164,7 @@ class Gui(Thread):
 				if self.tabLabelWord[i]["rect"].top > self.height_jeux - 30:
 					self.over = True
 					
-					son_over = pygame.mixer.Sound("over.ogg")
+					son_over = pygame.mixer.Sound(self.path.get_path(__file__, 1, "sounds\over.ogg"))
 					son_over.set_volume(0.1)
 					son_over.play()
 	

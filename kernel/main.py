@@ -3,16 +3,17 @@ from word_manager import WordManager
 import os
 from config import *
 from random import randrange
+from path import Path
 
 class Main:
 	def __init__(self):
 		self.tick = 0
 		self.over = False
+		self.path = Path()
 		
 		wordManager = WordManager()
-		file_name = "dic_words.txt"
-		dir_path = os.path.dirname(os.path.realpath(__file__))
-		path_file = os.path.join(dir_path, file_name)
+		file_name = "res\dic_words.txt"
+		path_file = self.path.get_path(__file__, 1, file_name)
 		words = wordManager.get_all_words(path_file)
 		
 		if not IN_NETWORK :
@@ -25,9 +26,7 @@ class Main:
 			for w in words:
 				larg,index = gui.createWordLabel(w)
 				left = randrange(width - larg)
-				gui.setCoordonateWordLabel(index,left)
-				
-		
+				gui.setCoordonateWordLabel(index,left)		
 
 if __name__ == '__main__':
 		print("Start Typing Race")
